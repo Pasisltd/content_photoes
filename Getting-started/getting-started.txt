@@ -1,0 +1,77 @@
+##Getting started
+# Pasis Payments Documentation
+
+##  Get Started with Pasis Payments
+
+**Pasis Payments** is a **cloud-based payment platform** built for merchants who need a **fast, secure, and reliable** way to handle transactions.
+
+With Pasis, businesses can:
+- Send and receive money easily.
+- Manage payments through a **centralized dashboard**.
+- Access tools that make payment processing **simple and efficient**.
+
+Whether you are transferring funds, requesting refunds, or tracking transactions, Pasis provides the flexibility and reliability your business needs.
+
+---
+
+## Dashboard Access
+
+The **Pasis Dashboard** is your central hub for managing your account and transactions. To access it, you must have a valid **Pasis account**.
+
+###  Getting Started
+1. **Register or Log In**
+   - Create a new Pasis account or log in with your existing credentials.
+2. **Verify Your Account**
+   - Complete the verification process to unlock additional features.
+   - Verification allows you to transfer funds to more than three mobile numbers and request refunds for failed transactions.
+3. **Use the Dashboard Features**
+   - View real-time transaction updates.
+   - Track successful, pending, or failed transactions.
+   - Manage webhooks for payment callbacks.
+   - Request withdrawals to your bank account and download bank slips once processed.
+
+---
+
+##  Key Advantages of the Pasis Dashboard
+
+1. **Interactive Graphs & Analytics**
+   - Visualize transaction trends with easy-to-read graphs.
+   - Filter by custom date ranges to monitor business performance.
+
+2. **Secure Account Verification**
+   - Unlock the ability to transfer funds to more than three mobile numbers.
+   - Request refunds quickly for failed or incomplete transactions.
+
+3. **Comprehensive Transaction Reports**
+   - Generate detailed reports with multiple sorting and filtering options.
+   - Export reports for auditing and record-keeping.
+
+4. **Real-Time Transaction Tracking**
+   - Instantly check the status of payments — **successful, pending, or failed**.
+   - Reduce errors and improve customer service with up-to-date information.
+
+5. **Webhook Management**
+   - Configure and manage webhooks for seamless integration with your systems.
+   - Ensure payment callbacks are delivered securely to your chosen endpoint.
+
+6. **Flexible Bank Withdrawals**
+   - Easily request fund transfers from your Pasis account to your bank account.
+   - Track withdrawal progress directly from the dashboard.
+
+7. **Bank Slip Download**
+   - Access and download official bank slips for every processed withdrawal.
+   - Maintain clear financial records for compliance and transparency.
+
+8. **User-Friendly Interface**
+   - Simple, intuitive design that’s easy to navigate, even for first-time users.
+   - Mobile-friendly layout for managing payments on the go.
+
+9. **Enhanced Security**
+   - Built-in safeguards protect your account and transactions.
+   - Verification layers ensure only authorized users can access sensitive actions.
+
+10. **Scalability for Businesses**
+   - Designed to handle both small-scale merchants and large enterprises.
+   - Efficiently manage high transaction volumes without performance issues.
+
+---
