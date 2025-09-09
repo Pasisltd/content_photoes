@@ -1,0 +1,66 @@
+## Payment flow
+# 🔹 Pasis Payment Flow
+
+## Fundamentals
+
+At **Pasis Money Transfer**, transactions are the heart of our payment system. The following principles explain how funds move across our platform:
+
+- **Send (Pay):** Transfer money from your Pasis account to a mobile wallet, bank account, or another Pasis user.  
+- **Receive (Top-Up):** Add money into your Pasis account from a mobile wallet, bank account, or Paymen partner.
+
+---
+
+## Transaction Lifecycle
+
+Each transaction in Pasis goes through different stages. As a business partner or user, you can monitor the status of your transactions in real time through the **Pasis Dashboard**.
+
+### 1. Transaction Creation
+
+When a transaction request reaches Pasis servers, our system performs several checks:
+
+  **Source validation** – ensuring the request is from a trusted partner or account.  
+  **Request structure validation** – all required details are present.  
+  **Uniqueness validation** – to prevent duplicate payments.
+
+If all checks pass, the transaction is created and moves to the next stage.
+
+### 2. Successful Transaction
+
+A transaction is successful when:
+
+- The customer completes the payment process.  
+- The payment is authorised by the provider (bank, wallet, or partner).  
+- Funds are securely moved from the customer’s account to the recipient’s account.  
+
+Both parties receive a confirmation notification.
+
+### 3. Failed Transaction
+
+A transaction is marked failed if:
+
+- The customer cancels or drops out of the payment process.  
+- Payment authorisation is denied (insufficient balance, wrong PIN, expired card, etc.).  
+- Technical errors prevent fund transfer.  
+
+> In this case, no money is deducted from the customer’s account.
+
+### 4. Pending Transaction
+
+A transaction may remain pending due to:
+
+- Network delays  
+- Mobile money or bank downtime  
+- Technical interruptions  
+
+When pending, the transaction is “in progress” until confirmation is received:
+
+- If completed → it becomes **Successful**  
+- If not completed after retries → it becomes **Failed**
+
+---
+
+## Tips for Everyone
+
+- Track payments in the **Pasis Dashboard** or via **API events**.  
+- If a payment is pending or failed, check your network, account balance, or contact support.  
+- Always use the official **Pasis platform or app** for transactions.
