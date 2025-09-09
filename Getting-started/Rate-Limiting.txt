@@ -1,0 +1,16 @@
+## Rate Limiting
+#   Rate Limiting at Pasis Money Transfer
+
+At **Pasis Money Transfer**, we use **rate limiting** to control how many requests are sent to our servers at a time. 
+Don’t worry,it’s not because our servers can’t handle traffic.
+It helps us **keep everything running smoothly** and ensures we can **grow and scale** easily in the future.
+
+## How It Works
+Each application connected to Pasis has its own limit.
+This means if you have multiple apps, each one gets its own “request allowance,” so one busy app doesn’t slow down the others.
+
+## How to Know You’ve Hit the Limit
+Right now, the limit is **300 requests per minute per application**.
+If you reach this, you’ll need to wait a little before sending more requests. Soon, we’ll allow **custom limits** so you can adjust based on your app’s needs.
+
+With Pasis, your money transfers stay **fast, reliable, and scalable**—no matter how many people are using the service!
