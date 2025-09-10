@@ -1,0 +1,89 @@
+## events
+# Events – Pasis Money Transfer
+
+Events represent the different states a transaction passes through during the payment flow.
+ A completed transaction typically goes through two main events:
+
+- Transaction:created – The transaction is in progress, waiting for the customer to confirm or cancel.
+  Status is usually pending.
+- Transaction:processed – The transaction has been confirmed or canceled by the customer. 
+  Status is typically success or failed.
+
+---
+
+## List Events
+
+You can list transactions with optional filters such as status, client phone number, reference, or transaction type.
+
+Path
+
+${BASE_URL}/events/transactions
+
+ Request Headers
+
+| Field         | Type   | Description                                   |
+|---------------|--------|-----------------------------------------------|
+| Content-Type  | string | application/json                              |
+| Accept        | string | application/json                              |
+| Authorization | string | Bearer JWT token obtained from authentication |
+
+Query Parameters
+
+| Field  | Type   | Description                                 |
+|--------|--------|---------------------------------------------|
+| status | string | Status of the transaction (pending, success, failed) |
+| client | string | Phone number of the customer                |
+| ref    | string | Reference number of the transaction        |
+| kind   | string | Type of transaction (PAY or PAYUP)         |
+
+---
+
+### Example Request
+
+```bash
+curl --location --request GET \
+'https://api.pasis.rw/events/transactions?ref=9af1b4d2-3e2a-49f5-92a3-72edcf99a2f4&kind=PAY&client=078xxxxxxx&status=pending' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {token}'
+
+Example Response
+
+{
+  "amount": 2000,
+  "client": "078xxxxxxx",
+  "event-kind": "transaction:created",
+  "kind": "PAY",
+  "limit": 30,
+  "offset": 0,
+  "ref": "9af1b4d2-3e2a-49f5-92a3-72edcf99a2f4",
+  "status": "failed",
+  "total": 250,
+  "transactions": [
+    {
+      "event_id": "bf76c3a8-cafe-11ec-9478-dead2ba023b5",
+      "event_kind": "transaction:processed",
+      "created_at": "2025-09-10T16:33:22.434606Z",
+      "data": {
+        "ref": "9af1b4d2-3e2a-49f5-92a3-72edcf99a2f4",
+        "kind": "PAY",
+        "fee": 2.3,
+        "merchant": "PASIS123",
+        "client": "078xxxxxxx",
+        "amount": 100,
+        "status": "successful",
+        "created_at": "2025-09-10T16:27:01.292808Z",
+        "processed_at": "2025-09-10T16:33:22.434351Z"
+      }
+    }
+  ]
+}
+
+Notes
+
+✅ transaction:created – Pending, waiting for customer action.
+
+✅ transaction:processed – Completed, status is success or failed.
+
+✅ Supports Pay (deposit) and Payup (withdrawal) transaction types.
+
+✅ Optional filters can be applied via query parameters to retrieve specific transactions.
