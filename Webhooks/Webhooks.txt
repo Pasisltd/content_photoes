@@ -1,0 +1,155 @@
+## webhooks
+#  Webhooks – Pasis Money Transfer
+
+## What is a Webhook?
+
+A webhook is a way for Pasis to notify your application in real-time when certain events occur, such as a transaction being completed.
+ Unlike normal APIs where you need to repeatedly check for updates, webhooks send the data automatically as soon as the event happens.
+
+---
+
+## Securing Your Webhooks
+
+✅ Use HTTPS to encrypt data in transit.
+✅ Verify the webhook’s authenticity by checking the `X-Pasis-Signature` header using your webhook secret key.
+✅Keep your webhook URL secret to prevent unauthorized access.
+
+---
+
+## Registering a Webhook
+
+You need an application in your Pasis account.  
+
+1. Go to the Applications tab, select your application, and click Configure.  
+2. In the Webhooks card, fill in:
+   - URL: The endpoint that receives webhook events.
+   - Mode: Development or Production.
+   - Status: Active or Inactive.
+
+###### Insert picture of Webhooks here ######
+
+---
+
+## Webhook Events
+
+Webhooks are triggered when a `transaction:processed` event occurs. This happens when a Pay or Payup transaction is completed, regardless of success or failure.
+
+Payload Example:
+
+{
+  "event_id": "9346978a-40c0-11ed-84d0-dead0b5d6103",
+  "event_kind": "transaction:processed",
+  "created_at": "2025-09-10T13:05:36.707853Z",
+  "data": {
+    "ref": "598f7582-ab43-4c90-9575-820806ab9107",
+    "kind": "PAY",
+    "fee": 2.3,
+    "merchant": "PASIS123",
+    "client": "073xxxxxxx",
+    "amount": 1000,
+    "provider": "airtel",
+    "status": "successful",
+    "created_at": "2025-09-10T12:53:50.880947Z",
+    "processed_at": "2025-09-10T13:05:36.706109Z"
+  }
+}
+✅ref – Transaction reference
+
+✅kind – Type (PAY or PAYUP)
+
+✅fee – Transaction fee
+
+✅merchant – Merchant ID
+
+✅client – Customer phone number
+
+✅amount – Transaction amount
+
+✅provider – Payment provider
+
+✅status – successful or failed
+
+✅created_at – Time created
+
+✅processed_at – Time processed
+
+Testing Webhooks
+
+1.Include the header:
+
+X-Webhook-Mode: development
+
+2.For local testing, use localhost.run:
+
+ssh -R 80:localhost:8080 nokey@localhost.run
+
+✅Replace 8080 with the port your app is running on.
+
+✅Generates a public URL for testing.
+
+✅Note: localhost.run is only for testing, not recommended for production.
+
+Webhook Status
+
+Active: Webhook is currently receiving events.
+
+Inactive: Webhook is paused.
+
+Change the status via the Webhooks tab on your dashboard.
+
+Deleting a Webhook
+
+Go to the Webhooks tab → Click Delete on the webhook you want to remove.
+
+Signature Verification
+
+To ensure the webhook is from Pasis, verify the X-Pasis-Signature header using your webhook secret:
+
+const crypto = require('crypto');
+const express = require('express');
+const app = express();
+
+app.use(express.json({
+  verify: (req, res, buf) => { req.rawBody = buf; }
+}));
+
+app.post('/webhook', (req, res) => {
+  const requestHash = req.get('X-Pasis-Signature');
+  const secret = process.env.PASIS_WEBHOOK_SECRET;
+
+  const hash = crypto.createHmac('sha256', secret)
+                     .update(req.rawBody)
+                     .digest('base64');
+
+  if(hash === requestHash || req.method !== "HEAD") {
+    console.log('Webhook verified: originating from Pasis.');
+    // Process Pay or Payup transaction here
+  } else {
+    console.log('Invalid signature: webhook rejected.');
+  }
+
+  res.status(200).send();
+});
+
+
+How It Works:
+
+Pasis generates a SHA-256 HMAC signature using your webhook secret.
+
+Your server calculates the hash of the incoming payload and compares it to the header.
+
+If it matches, the webhook is valid.
+
+Troubleshooting
+
+If webhooks are not being received:
+
+✅ Check your URL – Ensure it’s publicly accessible.
+
+✅ Check your application – Ensure the webhook is tied to the correct application.
+
+✅ Check the webhook status – Must be Active.
+
+✅ Check the mode – Make sure your request mode (development or production) matches the webhook mode on the dashboard.
+
+SDK users: The correct mode is automatically set, but you can override it if needed.
