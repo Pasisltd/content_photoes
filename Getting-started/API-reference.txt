@@ -1,0 +1,132 @@
+## API-reference
+# Pasis Money Transfer – API Reference  
+
+Transactions are the main way to move funds between customers and merchants in Pasis. The system supports the following transaction types:  
+
+- Pay (Deposit): – Add money into your merchant account.  
+- Payup (Withdraw);– Transfer money from your merchant account to a customer.  
+
+---
+
+ 1. Pay (Deposit Money)  
+
+Path
+
+${BASE_URL}/transactions/pay
+
+Request Headers 
+
+| Field           | Type   | Description                                                                 |
+|-----------------|--------|-----------------------------------------------------------------------------|
+| Accept          | string | application/json                                                            |
+| Content-Type    | string | application/json                                                            |
+| Idempotency-Key | string | Optional unique string (max 32 chars) to ensure safe retries                 |
+| Authorization   | string | Bearer <access_token>                                                       |
+| X-Webhook-Mode  | string | Specify your environment (sandbox, production) for webhook notifications     |
+
+Request Body  
+
+| Field   | Type   | Description                                   |
+|---------|--------|-----------------------------------------------|
+| amount  | number | Amount to be deposited into the merchant account |
+| number  | string | Phone number of the customer                  |
+
+Example Request  
+```bash
+curl --location --request POST \
+  'https://api.pasis.rw/transactions/pay' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer {access_token}' \
+  --data-raw '{ "amount": 100, "number": "078xxxxxxx"}'
+
+Example Response
+{
+  "amount": 100,
+  "created_at": "2025-09-10T14:19:07.459Z",
+  "kind": "PAY",
+  "ref": "9af1b4d2-3e2a-49f5-92a3-72edcf99a2f4",
+  "status": "pending"
+}
+2. Payup (Withdraw Money)
+
+Path
+${BASE_URL}/transactions/payup
+
+ | Field           | Type   | Description                                                              |
+| --------------- | ------ | ------------------------------------------------------------------------ |
+| Accept          | string | application/json                                                         |
+| Content-Type    | string | application/json                                                         |
+| Idempotency-Key | string | Optional unique string (max 32 chars) to ensure safe retries             |
+| Authorization   | string | Bearer \<access\_token>                                                  |
+| X-Webhook-Mode  | string | Specify your environment (sandbox, production) for webhook notifications |
+
+| Field  | Type   | Description                                  |
+| ------ | ------ | -------------------------------------------- |
+| amount | number | Amount to be withdrawn from merchant account |
+| number | string | Phone number of the customer                 |
+
+Example Request
+
+curl --location --request POST \
+  'https://api.pasis.rw/transactions/payup' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer {access_token}' \
+  --data-raw '{ "amount": 1000, "number": "078xxxxxxx" }'
+
+Example Response
+
+{
+  "amount": 1000,
+  "created_at": "2025-09-10T14:19:07.459Z",
+  "kind": "PAYUP",
+  "ref": "f0bb2807-1d52-4795-b373-3feaf63dceb1",
+  "status": "pending"
+}
+3. Find a Transaction
+
+Transactions are uniquely identified by a reference key (ref) generated when the transaction is created.
+
+Path
+
+${BASE_URL}/transactions/find/{ref}
+
+Request Headers
+
+| Field         | Type   | Description             |
+| ------------- | ------ | ----------------------- |
+| Accept        | string | application/json        |
+| Content-Type  | string | application/json        |
+| Authorization | string | Bearer \<access\_token> |
+
+Example Request
+curl --location --request GET \
+  'https://api.pasis.rw/transactions/find/{ref}' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer {access_token}'
+Example Response
+{
+  "amount": 1000,
+  "client": "078xxxxxxx",
+  "fee": 23,
+  "kind": "PAYUP",
+  "merchant": "PASIS123",
+  "ref": "9af1b4d2-3e2a-49f5-92a3-72edcf99a2f4",
+  "status": "pending",
+  "timestamp": "2025-09-10T14:28:06.801Z"
+}
+4. Idempotency Key
+
+An idempotency key is a unique identifier that ensures a request is executed only once.
+
+ Example: If a Pay or Payup request is sent twice due to a network error, the second attempt will be ignored (if it has the same idempotency key).
+
+This prevents:
+
+Double charges.
+
+Duplicate withdrawals.
+
+Unnecessary refunds.
