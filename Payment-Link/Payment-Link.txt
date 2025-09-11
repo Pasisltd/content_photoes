@@ -1,0 +1,53 @@
+## Payment-Link
+What are Payment Links?
+
+Payment Links in Pasis are a simple, secure, and fast way to receive money from your customers. 
+They are hosted payment pages, so you don’t need to write any code to start accepting payments.
+
+Getting Started
+
+To use Payment Links, you need:
+
+1.A Pasis account
+
+2.A verified account
+
+3.A registered payment link
+
+1. Create and Verify Your Pasis Account
+
+✅Visit the Pasis website and click Get Started.
+
+✅Fill in your email and password, then click Register.
+
+✅Verify your account to unlock full functionality.
+
+2. Register a Payment Link
+
+Go to the Links tab in your dashboard.
+
+Click + Link.
+
+Fill in the required information:
+
+✅Title: The name of the payment link (e.g., “Transfer Payment”).
+
+✅Description: Short description of what the link is for.
+
+✅Amount: The amount to be paid.
+
+✅Images (optional): Images to show on the link.
+
+#####here is where we will put the  payment link.#######
+
+Checking Transactions
+
+To see transactions made through a payment link:
+
+1.Go to the Links tab.
+
+2.Click on the title of the link you want to check.
+
+3.View all transactions, including amount paid, date, and status.
+
+      ##here is where we will insert picture that show the transction link##
