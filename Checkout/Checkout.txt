@@ -1,0 +1,141 @@
+## Checkout
+What is Checkout?
+
+Checkout in Pasis Money Transfer is a simple, secure, and fast way for customers to complete a Pay → Payup transaction.
+
+Instead of building your own payment form, Pasis provides a hosted checkout page that you can easily integrate into your website or application.
+
+The flow is session-based:
+
+1.You create a checkout session.
+
+2.Redirect the customer to the Pasis Checkout page.
+
+3.The customer completes their Pay → Payup process.
+
+4.Pasis notifies your system of the result via webhooks.
+
+Requirements for Integration
+
+To use Checkout, you need:
+
+✅A Pasis account
+
+✅A Pasis application
+
+✅A registered checkout page
+
+1. Create a Pasis Account
+
+Visit the Pasis website and click Get Started. Fill in your email and password, then click Register.
+
+2. Create a Pasis Application
+
+In your dashboard, go to Applications → Create Application. Provide:
+
+✅Application name
+
+✅Description
+
+Click Create to generate your application.
+
+3. Register Your Checkout Page
+
+✅Go to your application settings.
+
+✅Configure checkout details (e.g., return URL, callback URL).
+
+✅Save your changes.
+
+Creating a Checkout Session
+
+To start a payment, send a POST request to the Pasis Checkout API:
+
+Endpoint:
+
+POST https://checkout.pasis.rw/api/checkouts/initiate
+
+Request Headers
+| Field        | Type   | Value            |
+| ------------ | ------ | ---------------- |
+| Accept       | string | application/json |
+| Content-Type | string | application/json |
+
+Request Body
+| Field   | Type   | Description                   |
+| ------- | ------ | ----------------------------- |
+| items   | array  | List of items to be paid for. |
+| app\_id | string | Your application ID key.      |
+| email   | string | Customer’s email address.     |
+
+Example (cURL)
+curl --location --request POST 'https://checkout.pasis.rw/api/checkouts/initiate' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+  "items": [
+    { "name": "Money Transfer", "Amount": 5000, }
+  ],
+  "app_id": "xxxxx-xxxx-xxxx-xxxx-xxxxxxx",
+  "email": "customer@mail.com"
+}'
+
+Response (Sample)
+{
+  "session_id": "sess_12345",
+  "amount": 5000,
+  "kind": "session:created",
+  "payment_link": "https://checkout.pasis.rw/pay/sess_12345",
+  "created_at": "2025-09-11T09:00:00Z"
+}
+Processing a Checkout Session
+
+Once the customer completes Pay → Payup, Pasis sends a webhook event session:processed.
+
+You must:
+
+✅Listen for the webhook.
+
+✅Verify the payment status.
+
+✅Update your order/transaction record.
+
+Example – Handling Webhook (Node.js)
+
+import express from "express";
+import bodyParser from "body-parser";
+
+const app = express();
+app.use(bodyParser.json());
+
+// Webhook endpoint
+app.post("/webhook", (req, res) => {
+  const event = req.body;
+
+  if (event.kind === "session:processed") {
+    const sessionId = event.session_id;
+    const amount = event.amount;
+    const status = event.status; // success or cancelled
+
+    if (status === "success") {
+      console.log(`✅ Pay → Payup completed for session ${sessionId}, Amount: ${amount}`);
+      // Update transaction in your DB
+    } else {
+      console.log(`❌ Payment cancelled for session ${sessionId}`);
+    }
+  }
+
+  res.sendStatus(200);
+});
+
+app.listen(3000, () => console.log("Webhook running on port 3000"));
+
+Troubleshooting
+
+Error: Phone number not found
+
+✅Unverified accounts can only use up to 3 phone numbers.
+
+✅To fix: Register the phone number under Approved Numbers in your dashboard.
+
+✅Alternatively, verify your account to unlock all numbers.
