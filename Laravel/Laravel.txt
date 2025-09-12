@@ -1,0 +1,157 @@
+## Laravel
+Pasis Money Transfer Laravel SDK
+
+Pasis Money Transfer Laravel SDK is a simple wrapper around the Pasis REST API, designed to integrate seamlessly with Laravel applications.
+
+Requirements
+
+PHP >= 7.4
+
+Composer
+
+Installation
+composer require your-namespace/pasis-php
+
+Configuration
+
+Include the Pasis class at the top of your PHP file and configure it with your API credentials.
+
+<?php
+
+use Pasis\Pasis;
+
+$pasis = new Pasis();
+
+$pasis->config([
+    'client_id' => env('PASIS_CLIENT_ID'),
+    'client_secret' => env('PASIS_CLIENT_SECRET'),
+    'webhook_mode' => env('PASIS_WEBHOOK_MODE'), // optional: development or production
+    'headers' => [] // optional additional headers
+]);
+
+
+⚠️ Make sure the webhook mode in your SDK matches the mode in your Pasis dashboard to properly receive notifications.
+
+Pay
+
+The Pay method is used to send money to a recipient’s mobile account.
+
+$pay = $pasis->Pay([
+    'phone' => "078xxxxxxx",
+    'amount' => 1000
+]);
+
+print_r($pay);
+
+
+Example Response:
+
+{
+  "amount": 1000,
+  "created_at": "2025-09-12T12:34:56.789Z",
+  "kind": "PAY",
+  "ref": "abc12345-6789-xyz",
+  "status": "pending"
+}
+
+Payup
+
+The Payup method is used to request funds from a client’s mobile account.
+
+$payup = $pasis->Payup([
+    'phone' => "078xxxxxxx",
+    'amount' => 1000
+]);
+
+print_r($payup);
+
+
+Example Response:
+
+{
+  "amount": 1000,
+  "created_at": "2025-09-12T12:35:01.123Z",
+  "kind": "PAYUP",
+  "ref": "xyz98765-1234-abc",
+  "status": "pending"
+}
+
+Transactions
+
+Get a list of processed transactions. Pending transactions may not appear in this list.
+
+$transactions = $pasis->Transactions([
+    'offset' => 0,
+    'limit' => 50
+]);
+
+print_r($transactions);
+
+
+Optional Parameters:
+
+limit: Number of transactions to return (max 100)
+
+offset: Skip the first N transactions
+
+kind: PAY or PAYUP
+
+status: successful, failed, pending
+
+from, to: Filter by date range
+
+client: Filter by client phone number
+
+Find a Transaction
+
+Retrieve details of a single transaction using its reference.
+
+$transaction = $pasis->Transaction('transaction_ref_here');
+
+print_r($transaction);
+
+Events
+
+List all transaction events for monitoring.
+
+$events = $pasis->Events([
+    'limit' => 20,
+    'offset' => 0
+]);
+
+print_r($events);
+
+
+Optional Parameters:
+
+limit, offset
+
+kind: PAY or PAYUP
+
+status: successful, failed, pending
+
+client: phone number
+
+ref: transaction reference
+
+from, to: date range
+
+Account Information
+
+Get your Pasis account profile including balance and rates.
+
+$profile = $pasis->me();
+
+print_r($profile);
+
+
+Example Response:
+
+{
+  "balance": 5000,
+  "email": "email@example.com",
+  "id": "ABC123",
+  "in_rate": 0.03,
+  "name": "Pasis Money Transfer",
+  "out_rate": 0.03
+}
