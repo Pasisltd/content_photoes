@@ -1,0 +1,253 @@
+## GO
+Pasis Go SDK
+
+Installation
+
+go get github.com/quarksgroup/Pasis-go@latest
+
+Initialization
+package main
+
+import (
+    "net/http"
+
+    "github.com/quarksgroup/Pasis-go"
+    "github.com/quarksgroup/Pasis-go/oauth"
+)
+
+// Service is the main handler for Pasis Money Transfer
+type Service struct {
+    client *Pasis.Client
+}
+
+// NewService initializes the Pasis client
+func NewService() *Service {
+    cli := Pasis.NewDefault()
+    cli.Http = &http.Client{
+        Transport: &oauth.Transport{
+            Scheme: oauth.SchemeBearer,
+            Source: oauth.ContextTokenSource(),
+            Base:   http.DefaultTransport,
+        },
+    }
+    return &Service{client: cli}
+}
+
+Pay
+package main
+
+import (
+    "context"
+    "log"
+)
+
+// PaymentRequest defines a Pay request
+type PaymentRequest struct {
+    Amount float64
+    Phone  string
+    Mode   string // "development" or "production"
+}
+
+// Pay sends money from client to Pasis wallet
+func (s *Service) Pay(ctx context.Context, tx PaymentRequest, accessTk string) (*Pasis.TransactionResponse, error) {
+
+    ctx = context.WithValue(ctx, Pasis.TokenKey{}, &Pasis.Token{
+        Access: accessTk,
+    })
+
+    req := &pasis.TransactionRequest{
+        Amount: tx.Amount,
+        Phone:  tx.Phone,
+        Mode:   tx.Mode,
+    }
+
+    res, err := s.client.Transaction.Cashin(ctx, req)
+    if err != nil {
+        log.Printf("Pay Error: %s", err)
+        return nil, err
+    }
+
+    return res, nil
+}
+
+Sample Response
+{
+  "amount": 1000,
+  "created_at": "2025-09-12T10:30:00.123Z",
+  "kind": "PAY",
+  "ref": "pasis-7f2a1c3b-5678-4d9f-9999-123456abcdef",
+  "status": "pending"
+}
+
+PayUp
+package main
+
+import (
+    "context"
+    "log"
+)
+
+// PayUpRequest defines a PayUp (withdrawal) request
+type PayUpRequest struct {
+    Amount float64
+    Phone  string
+    Mode   string // "development" or "production"
+}
+
+// PayUp sends money from Pasis wallet to client
+func (s *Service) PayUp(ctx context.Context, tx PayUpRequest, accessTk string) (*Pasis.TransactionResponse, error) {
+
+    ctx = context.WithValue(ctx, Pasis.TokenKey{}, &Pasis.Token{
+        Access: accessTk,
+    })
+
+    req := &Pasis.TransactionRequest{
+        Amount: tx.Amount,
+        Phone:  tx.Phone,
+        Mode:   tx.Mode,
+    }
+
+    res, err := s.client.Transaction.Cashout(ctx, req)
+    if err != nil {
+        log.Printf("PayUp Error: %s", err)
+        return nil, err
+    }
+
+    return res, nil
+}
+
+Sample Response
+{
+  "amount": 500,
+  "created_at": "2025-09-12T10:40:00.456Z",
+  "kind": "PAYUP",
+  "ref": "pasis-d0bb2807-1d52-4795-b373-3feaf63dceb1",
+  "status": "pending"
+}
+Authorization
+package main
+
+import (
+    "context"
+    "log"
+)
+
+// Token represents the authentication details for Pasis
+type Token struct {
+    AccessToken  string
+    RefreshToken string
+    ExpiresAt    int64
+}
+
+// Login authenticates a Pasis merchant and returns tokens
+func (s *Service) Login(ctx context.Context, clientID, clientSecret string) (*Token, error) {
+    tk, err := s.client.Auth.Login(ctx, clientID, clientSecret)
+    if err != nil {
+        log.Printf("Login Error: %s", err)
+        return nil, err
+    }
+    return &Token{
+        AccessToken:  tk.Access,
+        RefreshToken: tk.Refresh,
+        ExpiresAt:    tk.Expires,
+    }, nil
+}
+
+// Refresh generates a new access token using refresh token
+func (s *Service) Refresh(ctx context.Context, refreshToken string) (*Token, error) {
+    req := &paypack.Token{Refresh: refreshToken}
+    tk, err := s.client.Auth.Refresh(ctx, req)
+    if err != nil {
+        log.Printf("Refresh Error: %s", err)
+        return nil, err
+    }
+    return &Token{
+        AccessToken:  tk.Access,
+        RefreshToken: tk.Refresh,
+        ExpiresAt:    tk.Expires,
+    }, nil
+}
+
+Sample Response
+{
+  "access": "xxxxxxxxxxxxxxxxxxxx",
+  "refresh": "xxxxxxxxxxxxxxxxxxxx",
+  "expires": "1726158723"
+}
+Events
+package main
+
+import (
+    "context"
+    "log"
+)
+
+// Events fetches a list of transaction events for Pasis
+func (s *Service) Events(ctx context.Context, accessTk string, options ...Pasis.Option) (*Pasis.EventList, error) {
+
+    ctx = context.WithValue(ctx, Pasis.TokenKey{}, &Pasis.Token{
+        Access: accessTk,
+    })
+
+    res, err := s.client.Event.List(ctx, options...)
+    if err != nil {
+        log.Printf("Events Error: %s", err)
+        return nil, err
+    }
+
+    return res, nil
+}
+Sample Response
+{
+  "amount": 1000,
+  "client": "078xxxxxxx",
+  "event_kind": "transaction:processed",
+  "kind": "PAY",
+  "ref": "pasis-7f2a1c3b-5678-4d9f-9999-123456abcdef",
+  "status": "successful"
+}
+Merchant Account Info
+package main
+
+import (
+    "context"
+    "log"
+)
+
+// MerchantInfo holds merchant account details
+type MerchantInfo struct {
+    Name    string
+    InRate  float64
+    OutRate float64
+    Balance float64
+}
+
+// Me fetches the Pasis merchant account information
+func (s *Service) Me(ctx context.Context, accessTk string) (*MerchantInfo, error) {
+
+    ctx = context.WithValue(ctx, Pasis.TokenKey{}, &Pasis.Token{
+        Access: accessTk,
+    })
+
+    res, err := s.client.Merchant.Me(ctx)
+    if err != nil {
+        log.Printf("Merchant Info Error: %s", err)
+        return nil, err
+    }
+
+    return &MerchantInfo{
+        Name:    res.Name,
+        InRate:  res.InRate,
+        OutRate: res.OutRate,
+        Balance: res.Balance,
+    }, nil
+}
+Sample Response
+{
+  "balance": 10000,
+  "email": "support@pasis.com",
+  "id": "PASIS001",
+  "in_rate": 0.05,
+  "name": "Pasis Money Transfer",
+  "out_rate": 0.05
+}

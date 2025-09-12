@@ -1,0 +1,173 @@
+## javaScript
+
+Installation
+
+npm install Pasis-js
+
+Configuration
+
+const PasisMoneyTransfer = require("Pasis").default;
+
+const pasisMoneyTransfer = new PasisMoneyTransfer({
+  client_id: "",
+  client_secret: ""
+});
+
+
+or
+
+const PasisMoneyTransfer = require("Pasis").default;
+
+const pasisMoneyTransfer = PasisMoneyTransfer.config({
+  client_id: "",
+  client_secret: ""
+});
+
+Pay 
+pasisMoneyTransfer.pay({
+  number: "07xxxxxxx",
+  amount: 100,
+  environment: "development" // or "production"
+})
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+ Example Response
+
+{
+  "amount": 1000,
+  "created_at": "2005-11-09T21:19:07.459Z",
+  "kind": "PAY",
+  "ref": "d0bb2807-1d52-4795-b373-3feaf63dceb1",
+  "status": "pending"
+}
+
+Pay Up 
+pasisMoneyTransfer.payup({
+  number: "07xxxxxxx",
+  amount: 100,
+  environment: "development" // or "production"
+})
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+ Example Response
+
+{
+  "amount": 1000,
+  "created_at": "2005-11-09T21:19:07.459Z",
+  "kind": "PAYUP",
+  "ref": "d0bb2807-1d52-4795-b373-3feaf63dceb1",
+  "status": "pending"
+}
+
+Transactions
+pasisMoneyTransfer.transactions({ offset: 0, limit: 100 })
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+  Example Response
+
+{
+  "pay": 100000,
+  "payup": 100000,
+  "fee": 2300,
+  "from": "2014-05-16T08:28:06",
+  "kind": "PAY",
+  "limit": 25,
+  "offset": 0,
+  "to": "2014-05-17T08:28:06",
+  "total": 250,
+  "transactions": [
+    {
+      "amount": 1000,
+      "client": "078xxxxxxx",
+      "fee": 23,
+      "kind": "PAYUP",
+      "merchant": "IJOK9F",
+      "provider": "mtn",
+      "ref": "d0bb2807-1d52-4795-b373-3feaf63dceb1",
+      "status": "pending",
+      "timestamp": "2014-05-16T08:28:06.801064-04:00"
+    }
+  ]
+}
+
+Events
+pasisMoneyTransfer.events({ offset: 0, limit: 100 })
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+ Example Response
+
+{
+  "amount": 1000,
+  "client": "078xxxxxxx",
+  "event-kind": "transaction:created",
+  "kind": "PAY",
+  "limit": 20,
+  "offset": 0,
+  "ref": "d0bb2807-1d52-4795-b373-3feaf63dceb1",
+  "status": "failed",
+  "total": 250,
+  "transactions": [
+    {
+      "event_id": "bf76c3a8-cafe-11ec-9478-dead2ba023b5",
+      "event_kind": "transaction:processed",
+      "created_at": "2022-05-03T16:33:22.434606Z",
+      "data": {
+        "ref": "ajsfh44w3j-4h4r-28438-efnef-e9f44a5b4c2d",
+        "kind": "PAY",
+        "fee": 2.3,
+        "merchant": "XXXXX",
+        "client": "078xxxxxxx",
+        "amount": 100,
+        "status": "successful",
+        "created_at": "2022-05-03T16:27:01.292808134Z",
+        "processed_at": "2022-05-03T16:33:22.434351492Z"
+      }
+    }
+  ]
+}
+
+Account Information
+
+pasisMoneyTransfer.me()
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+Example Response
+
+{
+  "balance": 10000,
+  "email": "email@example.com",
+  "id": "XXXXX",
+  "in_rate": 0.05,
+  "name": "Company Name",
+  "out_rate": 0.05
+}
