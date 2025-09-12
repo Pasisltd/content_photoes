@@ -1,0 +1,23 @@
+## Idempotency
+
+Idempotency Overview 
+
+Sometimes, internet connections fail, and a money transfer request might be sent more than once.
+This could accidentally send money twice.
+
+To prevent this, Pasis Money Transfer uses idempotency.
+This means you can safely retry a transaction without worrying about duplicates.
+
+What is an Idempotency Key?
+
+An idempotency key is a unique code you create for each transaction. 
+It helps the system know if a request is a retry of the same transaction.
+You can use a random code or a UUID. Once a transaction is processed, the system remembers it.
+
+How to Use It?
+
+When sending money, just add this header in your request:
+
+Idempotency-Key: <your-unique-key>
+
+This ensures that even if the request is sent again, the system will not process it twice.
