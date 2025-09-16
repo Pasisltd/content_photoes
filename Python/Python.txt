@@ -1,0 +1,114 @@
+## Python 
+1. Installation
+
+Install the Pasis Python SDK:
+
+pip install Pasis-py
+
+2. Initialization
+
+Set up your client credentials:
+
+from Pasis.client import HttpClient
+
+client_id = "YOUR_CLIENT_ID"
+client_secret = "YOUR_CLIENT_SECRET"
+
+client = HttpClient(client_id=client_id, client_secret=client_secret)
+
+3. Making a Payment (pay)
+
+from Pasis.transactions import Transaction
+
+# Parameters: amount and recipient phone number
+pay = Transaction().cashin(amount=100, phone_number="078XXXXXXX")  # renamed conceptually to 'pay'
+print(pay)
+
+
+Sample Response:
+
+{
+  "amount": 100,
+  "created_at": "2025-09-12T12:00:00Z",
+  "kind": "PAY",
+  "ref": "abcd1234-5678-efgh-9012-ijkl34567890",
+  "status": "pending"
+}
+
+4. Receiving a Payment (payup)
+
+Instead of cashout, we call it payup:
+
+from Pasis.transactions import Transaction
+
+# Parameters: amount and sender phone number
+payup = Transaction().cashout(amount=100, phone_number="078XXXXXXX")  # renamed conceptually to 'payup'
+print(payup)
+
+
+Sample Response:
+
+{
+  "amount": 100,
+  "created_at": "2025-09-12T12:05:00Z",
+  "kind": "PAYUP",
+  "ref": "ijkl3456-7890-abcd-1234-efgh56789012",
+  "status": "pending"
+}
+
+5. Authorization
+
+Login and refresh tokens:
+
+from Pasis.oauth2 import Oauth
+
+# Login
+auth = Oauth().auth()
+print(auth)
+
+# Refresh access token
+refresh = Oauth().refresh_access_token()
+print(refresh)
+
+
+Sample Response:
+
+{
+  "access": "xxxxxxxxxxxx",
+  "refresh": "xxxxxxxxxxxx",
+  "expires": "2025-09-12T13:00:00Z"
+}
+
+6. Checking Events
+
+Track recent payments (pay) and received payments (payup):
+
+from Pasis.events import Event
+
+kind = 'cashout'  # you can map this to 'payup' in your system
+limit = 10
+offset = 0
+
+events = Event().list(kind, limit, offset)
+print(events)
+
+7. Account Information
+
+Check your merchant account details:
+
+from Pasis.merchant import Merchant
+
+account = Merchant().me()
+print(account)
+
+
+Sample Response:
+
+{
+  "balance": 10000,
+  "email": "email@example.com",
+  "id": "MERCHANT123",
+  "in_rate": 0.05,
+  "name": "Pasis Money Transfer",
+  "out_rate": 0.05
+}
