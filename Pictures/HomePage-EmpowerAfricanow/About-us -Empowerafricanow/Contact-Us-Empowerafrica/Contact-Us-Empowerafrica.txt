@@ -1,0 +1,59 @@
+## Contact Us on empowerafricanow
+
+📞 Contact Us
+
+We’d love to hear from you! Whether it’s a question about our projects or collaboration opportunities, our team is ready to assist.
+
+ Get in Touch
+
+✅Fast, friendly, and professional support:
+
+✅Questions about projects
+
+✅Collaboration opportunities
+
+✅Feedback and suggestions
+
+###Contact Form
+
+Send us a message:
+
+<form class="contact-form">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <input type="text" placeholder="Subject" required>
+  <textarea placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit" class="submit-btn">Send Message</button>
+</form>
+
+
+🌍 Our Contact Details
+
+Office Address:
+Kicukiro, Kigali, Rwanda
+
+Phone:
++250 780 035 234
+
+Email:
+info@empoweringafricanow.ltd
+
+Working Hours:
+Monday – Friday: 8:00 AM – 5:00 PM
+
+
+📌 Quick Links / Social Media
+
+Follow us and stay connected:
+
+Facebook: facebook.com/EmpowerAfricaNow
+
+Twitter: twitter.com/EmpAfricaNow
+
+LinkedIn: linkedin.com/company/empowerafricanow
+
+Instagram: instagram.com/empowerafricanow
+
+      Call-to-Action
+
+      Have a project in mind? Reach out today and let’s make it happen!
