@@ -1,0 +1,363 @@
+ Terms&Conditions on Pasis Money Transfer
+
+ 1. Use of the Service
+
+Pasis Money Transfer offers a digital platform that allows users to send and receive money securely. 
+By using our service, you agree to follow all applicable laws and our platform’s usage rules.
+
+2. User Accounts and Responsibilities
+
+To access our services, users must create an account with accurate and up-to-date information.
+You are fully responsible for maintaining your login credentials and any activity that occurs under your account.
+
+3. Data Privacy and Security
+
+Your privacy and data security are our top priorities. Pasis complies with international data protection standards. 
+All information shared on our platform is encrypted and handled with confidentiality.
+
+4. Subscription, Billing, and Payments
+
+Some services may include transaction or subscription fees. All costs are shown before you complete a transaction. 
+Users are responsible for keeping valid payment methods and covering all applicable charges.
+
+5. Compliance and Legal Requirements
+
+Pasis operates under financial laws and anti–money laundering (AML) policies. 
+We may request identification or documentation to verify your account and ensure legal compliance.
+
+6. Intellectual Property
+
+All trademarks, software, and content on Pasis belong to the company. 
+You are not allowed to copy, modify, or use any part of our platform for unauthorized purposes.
+
+7. Termination of Access
+
+Pasis reserves the right to suspend or permanently close any account found violating our terms, policies, or engaging in suspicious activity.
+
+8. System Updates and New Features
+
+We regularly improve our system. New features, updates, or changes may be released without prior notice to ensure better service and security.
+
+9. Limitation of Liability
+
+Pasis is not responsible for any indirect or consequential damages caused by using or being unable to use our service, unless required by law.
+
+10. Modifications to Terms
+
+We may review and update these Terms & Conditions at any time. Continued use of the service means you accept the latest version.
+
+####################################################################################################
+                  Added New Terms and Conditions (White Paper)
+                          English Version
+              1. Introduction
+
+PASIS is a licensed fintech platform offering cash-in, cash-out, online payments, money transfers, and money receive.
+
+These Terms and Conditions (“Terms”) explain how users (“you” or “the customer”) may use PASIS (“we,” “us,” or “our”).
+By registering for or using PASIS, you agree to follow these Terms and all applicable financial regulations.
+
+2. Use of the Service
+
+You must use PASIS services lawfully, responsibly, and ethically.
+
+PASIS may only be used for legitimate online financial transactions such as:
+
+Deposits and withdrawals
+
+Money transfers
+
+Online bill payments
+
+Merchant collections
+
+Prohibited uses include:
+
+Money laundering or terrorism financing
+
+Fraudulent or misleading transactions
+
+Any illegal or unauthorized activity
+
+3. User Registration & Obligations
+
+To use PASIS, you must register and provide accurate personal and identification details.
+
+By creating an account, you agree to:
+
+Provide true and up-to-date information
+
+Keep your login credentials secure and private
+
+Notify PASIS immediately if you suspect unauthorized access or a security breach
+
+Accept responsibility for all activities carried out under your account
+
+4. Platform Responsibilities
+
+PASIS is committed to providing reliable and secure services.
+We ensure that:
+
+All transactions are handled safely and efficiently
+
+Customer data remains confidential and protected
+
+Transactions are monitored to prevent fraud, money laundering, and misuse
+
+Service fees, limits, and pricing are communicated clearly and transparently
+
+5. KYC / AML Compliance
+
+PASIS strictly follows Know Your Customer (KYC) and Anti-Money Laundering (AML) laws.
+
+We may ask you to provide:
+
+Valid identification documents
+
+Proof of address
+
+Clarification or justification for certain transactions
+
+If you fail to comply, your account may be suspended or permanently closed.
+
+6. Transaction Rules & Limits
+
+All transactions must follow PASIS’s daily and monthly limits.
+
+PASIS reserves the right to delay, review, or reject any suspicious transaction.
+
+Users must verify all recipient details before confirming a transfer.
+
+Once a transaction is completed, it cannot be reversed unless approved by PASIS.
+
+7. Merchant Onboarding & Conduct
+
+Merchants using PASIS must complete verification and operate transparently.
+
+Merchants must not:
+
+Charge customers unauthorized or hidden fees
+
+Engage in any fraudulent or misleading activities
+
+Abuse or manipulate the PASIS platform for personal benefit
+
+Any violation may lead to account suspension, financial penalties, or permanent removal from the platform.
+
+8. Data Protection & Privacy
+
+PASIS values your privacy and complies with Rwanda’s Data Protection and Privacy Laws.
+
+All personal data is securely stored and used only for:
+
+Service delivery
+
+Account verification
+
+Legal and regulatory compliance
+
+Your data will never be shared or sold to third parties without your consent, except where required by law.
+
+9. Refunds & Disputes
+
+Refunds are only granted in verified cases such as system errors or duplicate payments.
+
+Any dispute must be reported within 48 hours of the transaction.
+
+PASIS will investigate and respond within 5 business days.
+
+Refunds are processed through the same payment method used for the transaction.
+
+10. Fraud Prevention & Penalties
+
+PASIS uses advanced fraud detection and AI-based monitoring systems.
+
+If a user or merchant is found engaging in fraudulent activities, PASIS may:
+
+Terminate or freeze the account immediately
+
+Report the activity to law enforcement
+
+Take legal action as permitted by Rwandan law
+
+11. Limitation of Liability
+
+PASIS is not responsible for any loss or damage caused by:
+
+User mistakes or incorrect transaction details
+
+Unauthorized third-party access to your account
+
+Internet or network disruptions
+
+Events beyond our control (force majeure)
+
+Our total liability will not exceed the service fee paid for the disputed transaction.
+
+12. Modification of Terms
+
+PASIS may update or modify these Terms from time to time.
+Any changes will be posted on our website.
+Continuing to use PASIS after updates means you accept the new Terms.
+
+13. Governing Law & Dispute Resolution
+
+These Terms are governed by the laws of the Republic of Rwanda.
+Any dispute will first be handled through PASIS’s internal resolution process.
+If unresolved, the matter may be referred to the competent courts.         
+
+############################## Kinyarwanda Version #####################################
+1. Intangiriro
+
+PASIS ni urubuga rw’ikoranabuhanga rufite uruhushya rwo gutanga serivisi z’imari, zirimo kubitsa, kubikuza, kwishyura  hifashishijwe interineti, kohereza amafaranga, no kwakira amafaranga.
+
+Aya mategeko n’amabwiriza (“Amategeko”) asobanura uburyo abakoresha (“wowe” cyangwa “umukiriya”) bakorana na PASIS (“twe,” “natwe,” cyangwa “urubuga rwacu”).
+Iyo wiyandikishije cyangwa ukoresheje PASIS, uba wemeye gukurikiza aya Mategeko ndetse n’amategeko agenga imari mu Rwanda.
+
+2. Uko Serivisi Zikoreshwa
+
+Ukoresha PASIS agomba gukoresha serivisi z’urubuga mu buryo bwemewe n’amategeko, buboneye kandi buboneye mu myitwarire.
+
+PASIS ikoreshwa gusa mu bikorwa byemewe birimo:
+
+Kubitsa no kubikuza amafaranga
+
+Kohereza amafaranga
+
+Kwishyura fagitire hifashishijwe interineti
+
+Kwakira ubwishyu bw’abacuruzi
+
+Ntibyemewe gukoresha PASIS muri ibi bikurikira:
+
+Gukoresha amafaranga mu bikorwa by’iterabwoba cyangwa ibitemewe n’amategeko
+
+Uburiganya cyangwa ibikorwa byo kwiba binyuze mu ikoranabuhanga
+
+Ikindi gikorwa cyose kitemewe n’amategeko cyangwa kinyuranyije n’amahame y’imari
+
+3. Kwiyandikisha ni  Inshingano z’Umukoresha
+
+Mbere yo gukoresha PASIS, umukoresha agomba kwiyandikisha no gutanga amakuru ye nyayo n’ibimuranga.
+
+Iyo wemeye gukoresha PASIS, wemera:
+
+Gutanga amakuru y’ukuri kandi ahuye n’ukuri igihe cyose
+
+Gukomeza kubika neza ijambo ry’ibanga n’izina ukoresha (login credentials)
+
+Gutanga amakuru ako kanya igihe habayeho gukekwaho ubujura cyangwa kwinjirirwa ku rubuga rwawe
+
+Kuba wowe ubazwa ibikorwa byose bikorwa ukoresheje konti yawe
+
+4. Inshingano za PASIS
+
+PASIS yiyemeje gutanga serivisi z’imari zizewe kandi zifite umutekano.
+Twiyemeje kandi:
+
+Gutanga serivisi z’ubwishyu no kohererezanya amafaranga mu buryo bwizewe
+
+Kurinda ibanga n’umutekano w’amakuru y’abakiriya
+
+Gukurikirana ibikorwa byose bigaragaza uburiganya cyangwa ikoreshwa nabi ry’urubuga
+
+Gutangaza mu buryo bweruye amafaranga yishyurwa n’amabwiriza yerekeye imipaka y’ibikorwa (limits)
+
+5. Kumenya Umukiriya (KYC) no Kurwanya Ikoreshwa nabi ry’Amafaranga (AML)
+
+PASIS yubahiriza amategeko ya Kumenya Umukiriya (KYC) no Kurwanya ikoreshwa ry’amafaranga mu buryo bunyuranyije n’amategeko (AML).
+
+Igihe cyose, PASIS ishobora kugusaba:
+
+Indangamuntu yemewe n’amategeko
+
+Inyandiko yerekana aho utuye
+
+Ibisobanuro ku mpamvu cyangwa inkomoko y’amafaranga yawe
+
+Iyo utubahirije ibyo bisabwa, konti yawe ishobora guhagarikwa cyangwa gufungwa burundu.
+
+6. Amabwiriza n’Imipaka y’Ibikorwa
+
+Ibikorwa byose bigomba gukorwa mu mipaka yagenwe na PASIS (ya buri munsi n’ukwezi).
+
+PASIS ifite uburenganzira bwo gusuzuma, gutinza, cyangwa kwanga ibikorwa bikekwa.
+
+Umukoresha agomba kugenzura neza amazina n’ibimenyetso by’uwo yohereje amafaranga mbere yo kwemeza igikorwa.
+
+Iyo igikorwa kirangiye, ntigishobora gusubizwa inyuma keretse PASIS ibihereye uburenganzira.
+
+7. Abacuruzi n’Uburyo Bakorana na PASIS
+
+Abacuruzi bakorana na PASIS bagomba kubanza kwemezwa no gukora mu mucyo.
+
+Umucuruzi ntashobora:
+
+Kwishyuza abakiriya amafaranga atemewe cyangwa atavuzwe
+
+Gukora ibikorwa by’uburiganya cyangwa kuyobya abakiriya
+
+Gukoresha PASIS ku nyungu ze bwite mu buryo butemewe
+
+Iyo ibyo bisuzuguranyijwe, PASIS ishobora guhagarika konti, guhana amande, cyangwa guhagarika burundu uwo mucuruzi.
+
+8. Kurinda Amakuru n’Ubuzima bwite
+
+PASIS yubahiriza amategeko agenga kurinda amakuru y’abakiriya n’ubuzima bwite mu Rwanda.
+
+Amakuru yose akusanywa abikwa mu buryo bwizewe kandi akoreshwa gusa mu:
+
+Gutanga serivisi
+
+Kugenzura no kwemeza abakiriya
+
+Kubahiriza amategeko n’amabwiriza y’igihugu
+
+Amakuru yawe ntazagurishwa cyangwa ngo ashyikirizwe abandi bantu batabiherewe uburenganzira, keretse amategeko abitegetse.
+
+9. Ibisubizo n’Ibibazo ku Makosa
+
+Gusubizwa amafaranga (refund) bikorwa gusa mu gihe habayeho ikosa rya sisitemu cyangwa ubwishyu bwikubye kabiri.
+
+Ikibazo kigomba gutangazwa bitarenze amasaha 48 nyuma y’igikorwa.
+
+PASIS izasuzuma ikibazo kandi isubize mu gihe cy’iminsi 5 y’akazi.
+
+Amafaranga asubizwa anyuzwa mu buryo bw’ubwishyu bwakoreshejwe mu gikorwa cya mbere.
+
+10. Kurwanya Uburiganya n’Ibihano
+
+PASIS ikoresha uburyo bugezweho bwo gutahura uburiganya n’ubwenge bw’ubukorano (AI) mu igenzura ry’ibikorwa.
+
+Umukoresha cyangwa umucuruzi uzafatwa akora ibikorwa by’uburiganya azahura n’ibihano bikomeye birimo:
+
+Guhagarikwa cyangwa gufungwa kwa konti ako kanya
+
+Gutangazwa ku nzego zishinzwe umutekano
+
+Gukurikiranywaho n’amategeko
+
+11. Inshingano Zishingiye ku Makosa
+
+PASIS ntishobora kubazwa ku ngaruka cyangwa igihombo biterwa n’ibi bikurikira:
+
+Ikosa ry’umukoresha
+
+Uwinjiye kuri konti mu buryo butemewe
+
+Kudahari k’umuyoboro wa interineti cyangwa ibindi bibazo bya tekiniki
+
+Ibyago cyangwa ibibazo biterwa n’ibidashobora kugenzurwa (force majeure)
+
+Inshingano zose za PASIS ntizizarenza amafaranga yishyuwe nk’ikiguzi cya serivisi yateje ikibazo.
+
+12. Ivugururwa ry’Amategeko
+
+PASIS ishobora kuvugurura aya Mategeko igihe cyose bibaye ngombwa.
+Impinduka zizashyirwa ku rubuga rwacu.
+Gukomeza gukoresha PASIS nyuma y’ivugururwa bisobanura ko wemeye amategeko mashya.
+
+13. Amategeko Agenga n’Uburyo bwo Gukemura Impaka
+
+Aya Mategeko agengwa n’amategeko y’u Rwanda.
+Impaka zose zibanza gukemurwa binyuze mu nzira zemewe z’imbere muri PASIS.
+Iyo bitabonetsemo igisubizo, ikibazo cyoherezwa mu rukiko rubifitiye ububasha.
