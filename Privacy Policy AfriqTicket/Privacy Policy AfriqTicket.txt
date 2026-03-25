@@ -1,0 +1,156 @@
+##Privacy Policy
+
+Effective Date: [.............]
+
+AfriqTickets ("we", "our", or "us") respects your privacy and is committed to protecting the personal information of our users. This Privacy Policy explains how AfriqTickets collects, uses, stores, and protects your personal information when you use our website, mobile applications, and ticketing services.
+
+By accessing or using AfriqTickets services, you agree to the collection and use of information in accordance with this Privacy Policy.
+
+1. Information We Collect
+
+We may collect different types of information when you use the AfriqTickets platform.
+
+Personal Information
+
+When you create an account, purchase tickets, or contact us, we may collect personal information such as:
+
+Full name
+
+Email address
+
+Phone number
+
+Billing and payment information
+
+Identification information where required
+
+Transaction Information
+
+When you purchase tickets or interact with events on the platform, we may collect information including:
+
+Event name and details
+
+Ticket type and quantity
+
+Transaction ID
+
+Payment confirmation
+
+Purchase history
+
+Technical and Usage Information
+
+When you access the AfriqTickets platform, we may automatically collect certain technical information, including:
+
+Internet Protocol (IP) address
+
+Browser type and version
+
+Device type
+
+Operating system
+
+Pages visited and browsing behavior
+
+Date and time of access
+
+2. How We Use Your Information
+
+AfriqTickets uses the information collected for the following purposes:
+
+To create and manage user accounts
+
+To process ticket purchases and payments
+
+To deliver electronic tickets and purchase confirmations
+
+To send event updates and service notifications
+
+To provide customer support
+
+To improve the functionality and performance of our platform
+
+To detect and prevent fraudulent or unauthorized activities
+
+To comply with legal and regulatory obligations
+
+3. Sharing of Information
+
+AfriqTickets does not sell or rent personal information to third parties.
+
+However, we may share information in the following circumstances:
+
+Event Organizers
+
+Information may be shared with event organizers to facilitate event management, ticket verification, and attendance tracking.
+
+Payment Service Providers
+
+We may share payment-related information with trusted payment service providers in order to securely process transactions.
+
+Service Providers
+
+We may engage trusted third-party service providers to assist with hosting, analytics, technical support, or other operational services.
+
+Legal and Regulatory Authorities
+
+We may disclose information when required by law, regulation, legal process, or governmental request.
+
+4. Cookies and Tracking Technologies
+
+AfriqTickets may use cookies and similar technologies to enhance user experience and improve platform functionality. These technologies help us:
+
+Remember user preferences
+
+Analyze platform usage and performance
+
+Improve website functionality
+
+Users may control cookies through their browser settings.
+
+5. Data Security
+
+AfriqTickets implements appropriate technical and organizational security measures designed to protect personal information against unauthorized access, alteration, disclosure, or destruction.
+
+While we strive to use commercially acceptable means to protect your information, no method of electronic transmission or storage is completely secure.
+
+6. Data Retention
+
+We retain personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, including providing services, complying with legal obligations, resolving disputes, and enforcing agreements.
+
+7. Your Privacy Rights
+
+Depending on applicable laws and regulations, users may have the right to:
+
+Request access to their personal information
+
+Request correction of inaccurate or incomplete information
+
+Request deletion of personal data where applicable
+
+Object to certain types of data processing
+
+Requests related to personal data may be submitted using the contact information provided below.
+
+8. Third-Party Websites
+
+The AfriqTickets platform may contain links to third-party websites or services. AfriqTickets is not responsible for the privacy practices or content of such external websites.
+
+Users are encouraged to review the privacy policies of any third-party sites they visit.
+
+9. Children's Privacy
+
+AfriqTickets services are not intended for individuals under the age of 18 without the consent of a parent or legal guardian. We do not knowingly collect personal information from children without appropriate consent.
+
+10. Changes to This Privacy Policy
+
+AfriqTickets may update this Privacy Policy from time to time to reflect changes in our services, legal requirements, or operational practices. Updated versions will be posted on this page with the revised effective date.
+
+11. Contact Information
+
+If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:
+
+AfriqTickets
+Email: support@afriqtickets.com
+
+Website: www.afriqtickets.com
